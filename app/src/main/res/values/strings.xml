@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">My Pizza App</string>
+    <string name="action_settings">Settings</string>
+    <string name="welcome_msg">Welcome to Perfect Pizza! We are located at 550 East Spring
+    Street, Columbus OH 43215 and our email address is info@perfectpizza.com. You can also
+    find us at www.google.com.</string>
+    <string name="size_msg">Pizza Size</string>
+    <string name="radio01txt">Small</string>
+    <string name="radio02txt">Medium</string>
+    <string name="radio03txt">Large</string>
+    <string name="crust_msg">Pizza Crust</string>
+</resources>

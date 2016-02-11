@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="crusts">
+        <item>Regular</item>
+        <item>Whole Wheat</item>
+        <item>Parmesan Stuffed</item>
+    </string-array>
+</resources>
