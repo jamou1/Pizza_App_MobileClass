@@ -27,26 +27,30 @@
 
     <RadioGroup
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:id="@+id/radioSize">
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/radio01txt"
-        android:id="@+id/radioButton" />
+        android:text="@string/rbTxtSmall"
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/rbSmall" />
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/radio02txt"
-        android:id="@+id/radioButton2" />
+        android:text="@string/rbTxtMedium"
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/rbMedium" />
 
     <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:checked="true"
-        android:text="@string/radio03txt"
-        android:id="@+id/radioButton3" />
+        android:text="@string/rbTxtLarge"
+        android:onClick="onRadioButtonClicked"
+        android:id="@+id/rbLarge" />
     </RadioGroup>
 
     <TextView
@@ -116,5 +120,6 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="NEXT"
+        android:onClick="sendOrder"
         android:id="@+id/button" />
 </LinearLayout>

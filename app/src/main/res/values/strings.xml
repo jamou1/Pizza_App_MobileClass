@@ -5,8 +5,9 @@
     Street, Columbus OH 43215 and our email address is info@perfectpizza.com. You can also
     find us at www.google.com.</string>
     <string name="size_msg">Pizza Size</string>
-    <string name="radio01txt">Small</string>
-    <string name="radio02txt">Medium</string>
-    <string name="radio03txt">Large</string>
+    <string name="rbTxtSmall">Small</string>
+    <string name="rbTxtMedium">Medium</string>
+    <string name="rbTxtLarge">Large</string>
     <string name="crust_msg">Pizza Crust</string>
+    <string name="title_activity_display_order_details">Order Details</string>
 </resources>

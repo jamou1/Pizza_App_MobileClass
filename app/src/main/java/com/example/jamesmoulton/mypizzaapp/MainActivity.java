@@ -1,5 +1,6 @@
 package com.example.jamesmoulton.mypizzaapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -8,6 +9,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.RadioButton;
+import android.widget.RadioGroup;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -48,5 +52,47 @@ public class MainActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    public void onRadioButtonClicked(View view) {
+        //Is the button now checked?
+        boolean checked = ((RadioButton) view).isChecked();
+        //Check which radio button was clicked
+        switch (view.getId()) {
+            case R.id.rbSmall:
+                if (checked)
+                    //SMall
+                    Toast.makeText(getApplicationContext(),
+                            "Small", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.rbMedium:
+                if (checked)
+                    //Medium
+                    Toast.makeText(getApplicationContext(),
+                            "Medium", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.rbLarge:
+                if (checked)
+                    //Large
+                    Toast.makeText(getApplicationContext(),
+                            "Large", Toast.LENGTH_SHORT).show();
+                break;
+        }
+    }
+
+    public void sendOrder(View view) {
+        //Do something in response to button
+        RadioGroup radioSizeGroup;
+        RadioButton radioSizeButton;
+        Intent intent = new Intent(this, DisplayOrderDetailsActivity.class);
+        //Get selected radioButton from radioGroup
+        radioSizeGroup = (RadioGroup) findViewById(R.id.radioSize);
+        int selectedId = radioSizeGroup.getCheckedRadioButtonId();
+        //find the radio button by returned id
+        radioSizeButton = (RadioButton) findViewById(selectedId);
+        //retrieve the value and pass it to the next activity
+        CharSequence szSize = radioSizeButton.getText();
+        intent.putExtra("pizzaSize", szSize);
+        startActivity(intent);
     }
 }
