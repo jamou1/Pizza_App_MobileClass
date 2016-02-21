@@ -63,7 +63,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:entries="@array/crusts"
-        android:id="@+id/spinner" />
+        android:id="@+id/CrustSpinner" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -74,20 +74,20 @@
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pepperoni"
-        android:id="@+id/checkBox" />
+        android:text="@string/topPep"
+        android:id="@+id/checkBoxPep" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Onion"
-        android:id="@+id/checkBox2" />
+        android:text="@string/topOni"
+        android:id="@+id/checkBoxOnion" />
 
     <CheckBox
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Sausage"
-        android:id="@+id/checkBox3" />
+        android:text="@string/topSau"
+        android:id="@+id/checkBoxSausage" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -98,20 +98,21 @@
     <RadioGroup
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:id = "@+id/radioHereOrThere">
 
         <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Pickup"
-        android:id="@+id/radioButton4" />
+        android:text="@string/pickup"
+        android:id="@+id/pickupButton" />
 
          <RadioButton
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
              android:checked="true"
-        android:text="Delivery"
-        android:id="@+id/radioButton5"
+        android:text="@string/delivery"
+        android:id="@+id/deliveryButton"
         />
     </RadioGroup>
 

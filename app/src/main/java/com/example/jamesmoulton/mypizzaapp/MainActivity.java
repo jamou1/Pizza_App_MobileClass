@@ -6,12 +6,20 @@ import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.SparseIntArray;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.zip.CheckedInputStream;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -84,6 +92,13 @@ public class MainActivity extends AppCompatActivity {
         //Do something in response to button
         RadioGroup radioSizeGroup;
         RadioButton radioSizeButton;
+        RadioGroup radioHereOrThereGroup;
+        RadioButton radioHereOrThereButton;
+        CheckBox ONE, TWO, THREE;
+
+
+
+
         Intent intent = new Intent(this, DisplayOrderDetailsActivity.class);
         //Get selected radioButton from radioGroup
         radioSizeGroup = (RadioGroup) findViewById(R.id.radioSize);
@@ -93,6 +108,56 @@ public class MainActivity extends AppCompatActivity {
         //retrieve the value and pass it to the next activity
         CharSequence szSize = radioSizeButton.getText();
         intent.putExtra("pizzaSize", szSize);
+
+        //Crust Spinner
+        final Spinner spin = (Spinner) findViewById(R.id.CrustSpinner);
+        TextView textSel = (TextView) spin.getSelectedView();
+        String selectedText = textSel.getText().toString();
+        CharSequence pzCrust = textSel.getText().toString();
+        intent.putExtra("crustType", pzCrust);
+
+        //Toppings Checkbox
+        ONE = (CheckBox) findViewById(R.id.checkBoxPep);
+        TWO = (CheckBox) findViewById(R.id.checkBoxOnion);
+        THREE = (CheckBox) findViewById(R.id.checkBoxSausage);
+        if(ONE.isChecked()) {
+            CharSequence top = ONE.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if(TWO.isChecked()) {
+            CharSequence top = TWO.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if(THREE.isChecked()) {
+            CharSequence top = THREE.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if(ONE.isChecked() && TWO.isChecked()) {
+            CharSequence top = ONE.getText() + " & " + TWO.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if (ONE.isChecked() && TWO.isChecked() && THREE.isChecked()) {
+            CharSequence top = ONE.getText() + " & " + TWO.getText() + " & " + THREE.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if (TWO.isChecked() && THREE.isChecked()) {
+            CharSequence top = TWO.getText() + " & " + THREE.getText();
+            intent.putExtra("toppingType", top);
+        }
+        if (ONE.isChecked() && THREE.isChecked()) {
+            CharSequence top = ONE.getText() + " & " + THREE.getText();
+            intent.putExtra("toppingType", top);
+        }
+
+
+        //Pickup or Delivery
+        radioHereOrThereGroup = (RadioGroup) findViewById(R.id.radioHereOrThere);
+        int pickedId = radioHereOrThereGroup.getCheckedRadioButtonId();
+        radioHereOrThereButton = (RadioButton) findViewById(pickedId);
+        CharSequence pzOrder = radioHereOrThereButton.getText();
+        intent.putExtra("pickOrDel", pzOrder);
+
+
         startActivity(intent);
     }
 }

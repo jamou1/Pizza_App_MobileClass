@@ -7,6 +7,8 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.ArrayAdapter;
+import android.widget.Spinner;
 import android.widget.TextView;
 
 public class DisplayOrderDetailsActivity extends AppCompatActivity {
@@ -29,10 +31,29 @@ public class DisplayOrderDetailsActivity extends AppCompatActivity {
         });
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
+        //Pizza size
         Intent intent = getIntent();
         String message = intent.getStringExtra("pizzaSize");
         TextView t = (TextView)findViewById(R.id.tvPizzaSize);
         t.setText("Pizza size = " + message);
+
+
+        //Crust Type
+        String textSel = intent.getStringExtra("crustType");
+        TextView c = (TextView)findViewById(R.id.tvCrustType);
+        c.setText("You selected " + textSel + " crust");
+
+        //Toppings choice
+        String topChoice = intent.getStringExtra("toppingType");
+        TextView tp = (TextView)findViewById(R.id.tvToppings);
+        tp.setText("Topped with " + topChoice);
+
+        //Pickup or Delivery
+        String messageTwo = intent.getStringExtra("pickOrDel");
+        TextView p = (TextView)findViewById(R.id.tvPickDeliv);
+        p.setText("Order Type:  " + messageTwo);  //Why does this keep pulling the size?
+
+
     }
 
 }

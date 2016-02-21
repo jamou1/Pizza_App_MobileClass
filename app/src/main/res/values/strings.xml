@@ -10,4 +10,9 @@
     <string name="rbTxtLarge">Large</string>
     <string name="crust_msg">Pizza Crust</string>
     <string name="title_activity_display_order_details">Order Details</string>
+    <string name="pickup">Pick Up</string>
+    <string name="delivery">Delivery</string>
+    <string name="topPep">Pepperoni</string>
+    <string name="topSau">Sausage</string>
+    <string name="topOni">Onion</string>
 </resources>
